@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BooksOperations.CreateBook;
-using WebApi.BooksOperations.DeleteBook;
-using WebApi.BooksOperations.GetBook;
-using WebApi.BooksOperations.UpdateBook;
 using WebApi.DBOperation;
 using static WebApi.BooksOperations.CreateBook.CreateBookCommand;
-using static WebApi.BooksOperations.UpdateBook.UpdateBookCommand;
 
 namespace WebApi.addControllers
 {
@@ -31,24 +27,11 @@ namespace WebApi.addControllers
 
         
         [HttpGet("{id}")]
-        public IActionResult GetById(int id) 
+        public Book GetById(int id) 
         {
-            GetBooksViewModel vmResult;
+            var bookId = _context.Books.Where(b => b.Id == id).SingleOrDefault();
 
-            GetBookCommand command = new GetBookCommand(_context);
-            try
-            {
-                command.bookId = id;
-                
-                vmResult = command.Handle();
-                
-            }
-            catch (Exception ex)
-            {
-                
-                return BadRequest(ex.Message);
-            }
-            return Ok(vmResult);
+            return bookId;
         }
 
         // [HttpGet]
@@ -75,27 +58,40 @@ namespace WebApi.addControllers
                 
                 return BadRequest(ex.Message);
             }
-            return Ok(newBook);
+            return Ok();
         }
 
         //Put
 
         [HttpPut("{id}")]
 
-        public IActionResult UpdateBook(int id,[FromBody] UpdateBookModel updatedBook)
+        public IActionResult UpdateBook(int id,[FromBody] Book updatedBook)
         {
-            try
+            var book = _context.Books.SingleOrDefault(x => x.Id == id);
+
+            if (book is null)
             {
-                UpdateBookCommand command = new UpdateBookCommand(_context);
-                command.BookId = id;
-                command.Model = updatedBook;
-                command.Handle();
+                return BadRequest();
+
             }
-            catch (Exception ex)
-            {
-                
-                return BadRequest(ex.Message);
-            }
+            // check database field, if it's changed (mean it is not 0) update else add new field 
+
+            book.GenreId = updatedBook.GenreId != default  
+            ? updatedBook.GenreId 
+            : book.GenreId;
+
+            book.PageCount = updatedBook.PageCount != default 
+            ? updatedBook.PageCount 
+            : book.PageCount;
+
+            book.PublishDate = updatedBook.PublishDate != default
+            ? updatedBook.PublishDate 
+            : book.PublishDate;
+
+            book.Title = updatedBook.Title != default
+            ? updatedBook.Title 
+            : book.Title;
+
             return Ok();
         }
 
@@ -103,18 +99,13 @@ namespace WebApi.addControllers
 
         public IActionResult DeleteBook(int id)
         {
-            DeleteBookCommand command = new DeleteBookCommand(_context);
+            var book = _context.Books.SingleOrDefault(x => x.Id == id);
+            if (book is null)
+            {
+                return BadRequest();
+            }
 
-            try
-            {
-                command.bookId = id;
-                command.Handle();
-            }
-            catch (Exception ex)
-            {
-                
-                return BadRequest(ex.Message);
-            }
+            _context.Books.Remove(book);
             return Ok();
         }
 
