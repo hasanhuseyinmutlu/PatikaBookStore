@@ -10,13 +10,13 @@ public class BookRepository
         {
             if (context.Books.Any())
             {
-                return;
+                return; // data seeded
             }
 
             context.Books.AddRange(
                 new Book
                 {
-                    Id = 1,
+                    // Id = 1,
                     Title = "Mona Lisa Overdrive",
                     GenreId = 1, // Science Fiction
                     PageCount = 360,
@@ -24,7 +24,7 @@ public class BookRepository
                 },
                 new Book
                 {
-                    Id = 2,
+                    // Id = 2,
                     Title = "Count Zero",
                     GenreId = 1, // Sciance Fiction
                     PageCount = 256,
@@ -32,7 +32,7 @@ public class BookRepository
                 },
                 new Book
                 {
-                    Id = 3,
+                    // Id = 3,
                     Title = "Neuromancer",
                     GenreId = 1, // Sciance Fiction
                     PageCount = 271,
