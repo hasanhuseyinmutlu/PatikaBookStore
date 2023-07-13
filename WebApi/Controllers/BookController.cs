@@ -47,7 +47,8 @@ namespace WebApi.addControllers
                 command.bookId = id;
 
                 commandValidator.Validate(command);
-
+                commandValidator.ValidateAndThrow(command);
+                
                 vmResult = command.Handle();
 
             }
@@ -107,9 +108,15 @@ namespace WebApi.addControllers
         {
             try
             {
+                UpdateBookCommandValidator commandValidator = new UpdateBookCommandValidator();
                 UpdateBookCommand command = new UpdateBookCommand(_context);
+
                 command.BookId = id;
                 command.Model = updatedBook;
+
+                commandValidator.Validate(command);
+                commandValidator.ValidateAndThrow(command);
+
                 command.Handle();
             }
             catch (Exception ex)
