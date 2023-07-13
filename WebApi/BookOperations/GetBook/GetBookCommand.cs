@@ -6,7 +6,7 @@ using WebApi.DBOperation;
 
 namespace WebApi.BooksOperations.GetBook
 {
-    internal class GetBookCommand
+    public class GetBookCommand
     {
         public int bookId { get; set; }
         private readonly BookStoreDbContext _dbContext;
