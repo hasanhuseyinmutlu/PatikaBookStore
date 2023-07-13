@@ -14,7 +14,7 @@ public class BookRepository
             }
 
             context.Books.AddRange(
-                new Book
+                new Book()
                 {
                     // Id = 1,
                     Title = "Mona Lisa Overdrive",
@@ -22,7 +22,7 @@ public class BookRepository
                     PageCount = 360,
                     PublishDate = new DateTime(1988, 06, 12)
                 },
-                new Book
+                new Book()
                 {
                     // Id = 2,
                     Title = "Count Zero",
@@ -30,7 +30,7 @@ public class BookRepository
                     PageCount = 256,
                     PublishDate = new DateTime(1986, 01, 14)
                 },
-                new Book
+                new Book()
                 {
                     // Id = 3,
                     Title = "Neuromancer",

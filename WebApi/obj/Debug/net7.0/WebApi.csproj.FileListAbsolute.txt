@@ -70,3 +70,5 @@ C:\Users\beebl\Desktop\patikler\PatikaBookStore\WebApi\obj\Debug\net7.0\refint\W
 C:\Users\beebl\Desktop\patikler\PatikaBookStore\WebApi\obj\Debug\net7.0\WebApi.pdb
 C:\Users\beebl\Desktop\patikler\PatikaBookStore\WebApi\obj\Debug\net7.0\WebApi.genruntimeconfig.cache
 C:\Users\beebl\Desktop\patikler\PatikaBookStore\WebApi\obj\Debug\net7.0\ref\WebApi.dll
+C:\Users\beebl\Desktop\patikler\PatikaBookStore\WebApi\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\beebl\Desktop\patikler\PatikaBookStore\WebApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\beebl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beebl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.7, )"

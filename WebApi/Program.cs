@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using WebApi.DBOperation;
 
@@ -12,6 +13,8 @@ builder.Services.AddSwaggerGen();
 // Add services for in-memory database and BookRepository
 builder.Services.AddScoped<BookRepository>();
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
