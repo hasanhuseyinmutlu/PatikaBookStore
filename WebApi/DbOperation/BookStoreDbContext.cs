@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using WebApi.addControllers;
 using WebApi.Entities;
 
 namespace WebApi.DBOperation

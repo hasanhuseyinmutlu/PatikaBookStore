@@ -9,18 +9,18 @@ namespace WebApi.Aplication.BooksOperations.GetBook
     public class GetBookCommand
     {
         public int bookId { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public GetBookCommand(BookStoreDbContext dbContext, IMapper mapper)
+        public GetBookCommand(BookStoreDbContext context, IMapper mapper)
         {
-            _dbContext = dbContext;
+            _context = context;
             _mapper = mapper;
         }
 
         public GetBooksViewModel Handle()
         {
 
-            var book = _dbContext.Books.Where(x => x.Id == bookId).SingleOrDefault();
+              var book = _context.Books.Include(x => x.Genre).SingleOrDefault(x => x.Id == bookId); 
 
             if (book is null)
             {
