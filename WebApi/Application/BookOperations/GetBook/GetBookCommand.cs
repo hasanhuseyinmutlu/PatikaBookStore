@@ -20,7 +20,10 @@ namespace WebApi.Aplication.BooksOperations.GetBook
         public GetBooksViewModel Handle()
         {
 
-              var book = _context.Books.Include(x => x.Genre).SingleOrDefault(x => x.Id == bookId); 
+              var book = _context.Books
+              .Include(x => x.Genre)
+              .Include(x => x.Author)
+              .SingleOrDefault(x => x.Id == bookId); 
 
             if (book is null)
             {

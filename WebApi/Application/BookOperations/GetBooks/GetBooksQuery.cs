@@ -22,6 +22,7 @@ namespace WebApi.Application.BookOperations.GetBooks
         {
             var bookList = _context.Books
                         .Include(x => x.Genre)
+                        .Include(x => x.Author)
                         .OrderBy(x => x.Id);
 
             List<BooksViewModel> obj = _mapper.Map<List<BooksViewModel>>(bookList);
@@ -46,6 +47,8 @@ namespace WebApi.Application.BookOperations.GetBooks
     {
         public string Title { get; set; }
         public string Genre { get; set; }
+        public string AuthorName { get; set; }
+        public string AuthorSurName { get; set; }
         public int PageCount { get; set; }
         public string PublishDate { get; set; }
     }
