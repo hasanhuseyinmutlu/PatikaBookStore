@@ -2,6 +2,7 @@
 using AutoMapper;
 using WebApi.Common;
 using WebApi.DBOperation;
+using WebApi.Entities;
 
 namespace WebApi.addControllers
 {

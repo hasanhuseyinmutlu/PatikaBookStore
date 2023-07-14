@@ -1,15 +1,15 @@
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.BooksOperations.CreateBook;
-using WebApi.BooksOperations.DeleteBook;
-using WebApi.BooksOperations.GetBook;
-using WebApi.BooksOperations.UpdateBook;
+using WebApi.addControllers;
+using WebApi.Aplication.BooksOperations.CreateBook;
+using WebApi.Aplication.BooksOperations.DeleteBook;
+using WebApi.Aplication.BooksOperations.GetBook;
+using WebApi.Aplication.BooksOperations.UpdateBook;
 using WebApi.DBOperation;
-using static WebApi.BooksOperations.CreateBook.CreateBookCommand;
-using static WebApi.BooksOperations.UpdateBook.UpdateBookCommand;
-
-namespace WebApi.addControllers
+using static WebApi.Aplication.BooksOperations.CreateBook.CreateBookCommand;
+using static WebApi.Aplication.BooksOperations.UpdateBook.UpdateBookCommand;
+namespace WebApi.Controlles
 {
     [ApiController]
     [Route("[controller]s")]
@@ -30,6 +30,7 @@ namespace WebApi.addControllers
         public IActionResult GetBooks()
         {
             GetBooksQuery query = new GetBooksQuery(_context, _mapper);
+            
             var result = query.Handle();
             return Ok(result);
         }

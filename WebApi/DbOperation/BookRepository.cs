@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi;
 using WebApi.DBOperation;
+using WebApi.Entities;
 
 public class BookRepository
 {
@@ -12,6 +13,20 @@ public class BookRepository
             {
                 return; // data seeded
             }
+
+            context.Genres.AddRange(
+                new Genre{
+                    Name = "Science Fiction"
+                },
+
+                new Genre{
+                    Name = "Noval"
+                },
+
+                new Genre{
+                    Name = "Utopia"
+                }
+            );
 
             context.Books.AddRange(
                 new Book()
