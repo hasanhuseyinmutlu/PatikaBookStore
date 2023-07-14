@@ -15,11 +15,8 @@ namespace WebApi.DBOperation
         public DbSet<Book> Books { get; set; }
 
         public DbSet<Genre> Genres {get; set;}
-
-        public List<Book> GetBooksFromDatabase()
-        {
-            return Books.ToList();
-        }
+        
+        public DbSet<Author> Authors { get; set; }
 
     }
 }

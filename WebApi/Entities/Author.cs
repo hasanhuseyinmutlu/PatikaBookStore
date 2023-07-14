@@ -6,7 +6,7 @@ namespace WebApi.Entities
     {
         
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AuthorId { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

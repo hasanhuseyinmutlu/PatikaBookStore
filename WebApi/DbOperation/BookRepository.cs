@@ -15,6 +15,19 @@ namespace WebApi.DBOperation
                 {
                     return; // data seeded
                 }
+                context.Authors.AddRange(
+                    new Author
+                    {
+                        
+                        Name = "William",
+
+                        Surname = "Gibson",
+
+                        BirthDay = new DateTime(1948,03,17)
+
+                        
+                    }
+                );
 
                 context.Genres.AddRange(
                     new Genre

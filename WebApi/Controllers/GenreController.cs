@@ -63,7 +63,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("id")]
-        public IActionResult UpdayeGenre(int id,[FromBody] UpdateGenreModel updateGenre)
+        public IActionResult UpdateGenre(int id,[FromBody] UpdateGenreModel updateGenre)
         {
             UpdateGenreCommand command = new UpdateGenreCommand(_context);
             
