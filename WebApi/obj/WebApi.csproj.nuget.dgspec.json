@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj": {}
+    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj": {
+    "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\beebl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\Webapi\\obj\\",
+        "outputPath": "C:\\Users\\beebl\\Desktop\\patikler\\PatikaBookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\beebl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.6.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.7, )"
@@ -60,6 +68,10 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

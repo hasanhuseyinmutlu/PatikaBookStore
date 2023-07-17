@@ -7,9 +7,11 @@ using WebApi.Aplication.GenreOperations.Command.CreateGenre;
 using WebApi.Aplication.GenreOperations.Command.UpdateGenre;
 using WebApi.Aplication.GenreOperations.UpdateGenre;
 using WebApi.Aplication.GenreOperations.Command.DeleteGenre;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class GenreController : ControllerBase
